@@ -29,7 +29,7 @@ function removeKFromList(l, k) {
   if (l === null) {
     return null;
   }
-
+ //для самого первого элемента. Меняем указатель HEAD на следующий узел
   while (l.value === k) {
     l = l.next
   }
