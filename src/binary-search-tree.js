@@ -19,8 +19,6 @@ class BinarySearchTree {
 constructor () {
   this.rootNode = null;
 }
-
-
   root() {
     // throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
@@ -75,11 +73,34 @@ constructor () {
   find(data) {
     //throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
+    let current = this.rootNode;
+
+    while (current) {
+      if (data < current.data) {
+        current = current.left;
+      } else if (data > current.data) {
+        current = current.right;
+      } else {
+        return current;
+      }
+    }
   }
 
   remove(data) {
     //throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
+    let current = this.rootNode;
+    let parent = null;
+
+    while (current) {
+      if (data < current.data) {
+        current = current.left;
+        parent = current;
+      } else if (data> current.data) {
+        current = current.right;
+        parent = current
+      }
+    }
   }
 
   min() {
