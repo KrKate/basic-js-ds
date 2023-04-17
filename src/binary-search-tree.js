@@ -75,6 +75,18 @@ constructor () {
   find(data) {
     //throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
+    let current = this.rootNode;
+
+    while(current) {
+      if (data < current.data) {
+        current = current.left;
+      } else if (data > current.data) {
+        current = current.right;
+      } else {
+        return current;
+      }
+    }
+    return null
   }
 
   remove(data) {
